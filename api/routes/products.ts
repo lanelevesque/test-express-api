@@ -1,8 +1,9 @@
 export {};
 
+import { createClient } from "@supabase/supabase-js";
+
 const express = require("express");
 const router = express.Router();
-const createClient = require("@supabase/supabase-js");
 
 router.get("/", (req: any, res: any) => {
   console.log(process.env.SUPABASE_URL);
