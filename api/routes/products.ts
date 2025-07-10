@@ -2,8 +2,10 @@ export {};
 
 const express = require("express");
 const router = express.Router();
+const createClient = require("supabase");
 
 router.get("/", (req: any, res: any) => {
+  console.log(process.env.SUPABASE_URL);
   res.send("this is the products router.");
 });
 
