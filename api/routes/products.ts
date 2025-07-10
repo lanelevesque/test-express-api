@@ -4,7 +4,7 @@ export {};
 
 const express = require("express");
 const router = express.Router();
-const supabase = require("supabase");
+const supabase = require("../index");
 
 router.get("/", (req: any, res: any) => {
   res.send("this is the products router.");
