@@ -4,7 +4,7 @@ export {};
 
 const express = require("express");
 const router = express.Router();
-const supabase = require("../supabaseClient");
+const supabase = require("../clients/supabaseClient");
 
 router.get("/", (req: any, res: any) => {
   res.send("this is the games router.");

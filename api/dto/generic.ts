@@ -1,0 +1,3 @@
+class Generic {
+  token: string;
+}

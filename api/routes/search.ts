@@ -7,15 +7,15 @@ const router = express.Router();
 const supabase = require("../clients/supabaseClient");
 
 router.get("/", (req: any, res: any) => {
-  res.send("this is the products router.");
+  res.send("this is the search router.");
 });
 
-router.get("/:productId", async (req: any, res: any) => {
-  const productId: UUID = req.params.productId;
+router.get("/:userId", async (req: any, res: any) => {
+  const userId: UUID = req.params.userId;
   const { data, error } = await supabase
-    .from("products")
+    .from("games")
     .select()
-    .eq("id", productId);
+    .eq("user_id", userId);
   res.send(data);
 });
 
