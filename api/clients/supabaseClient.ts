@@ -1,8 +1,10 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
+const getEnv = require("../utils");
+
 const supabase: SupabaseClient = createClient(
-  app.getEnv("SUPABASE_URL"),
-  app.getEnv("SUPABASE_KEY")
+  getEnv("SUPABASE_URL"),
+  getEnv("SUPABASE_KEY")
 );
 
 module.exports = supabase;

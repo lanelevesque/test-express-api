@@ -17,12 +17,4 @@ app.listen(3000, () => {
   console.log("Listing on port 3000");
 });
 
-app.getEnv = (name: string): string => {
-  if (typeof process.env[name] === "undefined") {
-    throw new Error(`Variable ${name} undefined.`);
-  }
-
-  return process.env[name];
-};
-
 module.exports = app;
