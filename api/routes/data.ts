@@ -6,16 +6,11 @@ const express = require("express");
 const router = express.Router();
 const supabase = require("../clients/supabaseClient");
 
-router.get("/", (req: any, res: any) => {
-  res.send("this is the search router.");
-});
-
-router.post("/", async (req: any, res: any) => {
-  const userId: UUID = req.params.userId;
+router.get("/", async (req: any, res: any) => {
   const { data, error } = await supabase
-    .from("games")
+    .from("igdb_games")
     .select()
-    .eq("user_id", userId);
+    .columns("id", "updated_at");
   res.send(data);
 });
 
